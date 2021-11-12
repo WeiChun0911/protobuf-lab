@@ -1,0 +1,62 @@
+// type RoomAgentPlayerMonitor struct {
+// 	ServerID   int    `json:"roomID"`
+// 	RoomName   string `json:"roomName"`
+// 	Agent      int    `json:"agent"`
+// 	PlayerName string `json:"playerName"`
+// 	//今日盈利率
+// 	PlayerProfitRate struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"playerProfitRate"`
+// 	//今日盈利
+// 	PlayerProfit struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"playerProfit"`
+// 	//今日投注
+// 	PlayerCellScore struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"playerCellScore"`
+// 	//今日局数
+// 	PlayerGameNum struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"playerGameNum"`
+// 	//总盈利率
+// 	PlayerTotalProfitRate struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"playerTotalProfitRate"`
+// 	//总局数
+// 	PlayerTotalGameNum struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"playerTotalGameNum"`
+// 	//注册时间/注册天数
+// 	PlayerRegisterTime string `json:"playerRegisterTime"`
+
+// 	//今日房间盈利
+// 	RoomPlayerProfit struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"roomPlayerProfit"`
+
+// 	//今日房间投注
+// 	RoomPlayerCellScore struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"roomPlayerCellScore"`
+// 	//今日房间局数
+// 	RoomPlayerGameNum struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"roomPlayerGameNum"`
+// }
+syntax = "proto3";
+package proto;
+option go_package = "./proto";
+
+message APIRoomAgentPlayerMonitorResponse {
+    
+}

@@ -1,0 +1,13 @@
+// type PlayerSourceEntity struct {
+// 	Platform string              `json:"platform"`
+// 	Date     string              `json:"date"`
+// 	Time     string              `json:"time"`
+// 	Items    []PlayerSourceItems `json:"gameRecordList"`
+// }
+
+syntax = "proto3";
+package proto;
+option go_package = "./proto";
+
+message GameRecords {
+}

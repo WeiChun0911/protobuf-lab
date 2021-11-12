@@ -1,0 +1,23 @@
+// type PlayerSourceItems struct {
+// 	ChannelId        int    `json:"ChannelId"`
+// 	Accounts         string `json:"Accounts"`
+// 	KindId           int    `json:"KindID"`
+// 	ServerId         int    `json:"ServerID"`
+// 	CellScore        int    `json:"CellScore"`
+// 	Profit           int    `json:"Profit"`
+// 	CreateTime       string `json:"CreateTime"`
+// 	IsNew            bool   `json:"IsNew"`
+// 	LastLoginTime    string `json:"LastLoginTime"`
+// 	RegisterTime     string `json:"RegisterTime"`
+// 	HistoryCellScore int    `json:"HistoryCellScore"`
+// 	HistoryProfit    int    `json:"HistoryProfit"`
+// 	HistoryGameNum   int    `json:"HistoryGameNum"`
+// }
+
+syntax = "proto3";
+package proto;
+option go_package = "./proto";
+
+message SingleGameRecord {
+    
+}
