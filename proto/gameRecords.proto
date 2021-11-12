@@ -1,13 +1,24 @@
-// type PlayerSourceEntity struct {
-// 	Platform string              `json:"platform"`
-// 	Date     string              `json:"date"`
-// 	Time     string              `json:"time"`
-// 	Items    []PlayerSourceItems `json:"gameRecordList"`
-// }
-
 syntax = "proto3";
 package proto;
 option go_package = "./proto";
 
 message GameRecords {
+    string Platform = 1;
+    string Date = 2;
+    string Time = 3;
+    message GameRecord {
+        uint32 ChannelId = 1;
+        string Accounts = 2;
+        uint32 KindId = 3;
+        uint32 ServerId = 4;
+        sint64 CellScore = 5;
+        sint64 Profit = 6;
+        string CreateTime = 7;
+        bool IsNew = 8;
+        string LastLoginTime = 9;
+        string RegisterTime = 10;
+        sint64 HistoryCellScore = 11;
+        sint64 HistoryProfit = 12;
+        sint64 HistoryGameNum = 13;
+    }
 }
