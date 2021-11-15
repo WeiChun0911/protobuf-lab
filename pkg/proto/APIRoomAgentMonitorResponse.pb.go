@@ -1,0 +1,281 @@
+// type RoomAgentMonitor struct {
+// 	ID        int    `json:"id"`
+// 	RoomName  string `json:"roomName"`
+// 	AgentID   int    `json:"agentID"`
+// 	AgentName string `json:"agentName"`
+// 	//盈利率
+// 	ProfitRate struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"profitRate"`
+// 	//新盈利率
+// 	NewProfitRate struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newProfitRate"`
+// 	//老盈利率
+// 	OldProfitRate struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldProfitRate"`
+// 	//盈利
+// 	Profit struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"profit"`
+// 	//新盈利
+// 	NewProfit struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newProfit"`
+// 	//老盈利
+// 	OldProfit struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldProfit"`
+// 	//活跃//活跃人数//投注人数
+// 	ActiveUser struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"activeUser"`
+// 	//新活跃//新用户//新投注人数
+// 	NewActiveUser struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newActiveUser"`
+// 	//老活跃//老用户//老投注人数
+// 	OldActiveUser struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldActiveUser"`
+// 	//有效投注
+// 	CellScore struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"cellScore"`
+// 	//新有效投注
+// 	NewCellScore struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newCellScore"`
+// 	//老有效投注
+// 	OldCellScore struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldCellScore"`
+// 	//人均投注
+// 	CellScoreAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"cellScoreAvg"`
+// 	//新人均投注
+// 	NewCellScoreAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newCellScoreAvg"`
+// 	//老人均投注
+// 	OldCellScoreAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldCellScoreAvg"`
+// 	//人均盈利
+// 	ProfitAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"profitAvg"`
+// 	//新人均盈利
+// 	NewProfitAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newProfitAvg"`
+// 	//老人均盈利
+// 	OldProfitAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldProfitAvg"`
+// 	//平均单局投注
+// 	CellScorePerGame struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"cellScorePerGame"`
+// 	//新平均单局投注
+// 	NewCellScorePerGame struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newCellScorePerGame"`
+// 	//老平均单局投注
+// 	OldCellScorePerGame struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldCellScorePerGame"`
+// 	//平均单局输赢//单局平均盈利
+// 	ProfitPerGame struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"profitPerGame"`
+// 	//新平均单局输赢//新单局平均盈利
+// 	NewProfitPerGame struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newProfitPerGame"`
+// 	//老平均单局输赢//老单局平均盈利
+// 	OldProfitPerGame struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldProfitPerGame"`
+// 	//人均局数
+// 	GameNumAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"gameNumAvg"`
+// 	//新人均局数
+// 	NewGameNumAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"newGameNumAvg"`
+// 	//老人均局数
+// 	OldGameNumAvg struct {
+// 		Value          *float64 `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"oldGameNumAvg"`
+// 	//期待盈利差值
+// 	ExpectProfitDiff struct {
+// 		Value          float64  `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"expectProfitDiff"`
+// }
+
+// Code generated by protoc-gen-go. DO NOT EDIT.
+// versions:
+// 	protoc-gen-go v1.27.1
+// 	protoc        v3.19.1
+// source: proto/APIRoomAgentMonitorResponse.proto
+
+package proto
+
+import (
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	reflect "reflect"
+	sync "sync"
+)
+
+const (
+	// Verify that this generated code is sufficiently up-to-date.
+	_ = protoimpl.EnforceVersion(20 - protoimpl.MinVersion)
+	// Verify that runtime/protoimpl is sufficiently up-to-date.
+	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
+)
+
+type APIRoomAgentMonitorResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *APIRoomAgentMonitorResponse) Reset() {
+	*x = APIRoomAgentMonitorResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_APIRoomAgentMonitorResponse_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *APIRoomAgentMonitorResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*APIRoomAgentMonitorResponse) ProtoMessage() {}
+
+func (x *APIRoomAgentMonitorResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_APIRoomAgentMonitorResponse_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use APIRoomAgentMonitorResponse.ProtoReflect.Descriptor instead.
+func (*APIRoomAgentMonitorResponse) Descriptor() ([]byte, []int) {
+	return file_proto_APIRoomAgentMonitorResponse_proto_rawDescGZIP(), []int{0}
+}
+
+var File_proto_APIRoomAgentMonitorResponse_proto protoreflect.FileDescriptor
+
+var file_proto_APIRoomAgentMonitorResponse_proto_rawDesc = []byte{
+	0x0a, 0x27, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x41, 0x50, 0x49, 0x52, 0x6f, 0x6f, 0x6d, 0x41,
+	0x67, 0x65, 0x6e, 0x74, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x22, 0x1d, 0x0a, 0x1b, 0x41, 0x50, 0x49, 0x52, 0x6f, 0x6f, 0x6d, 0x41, 0x67, 0x65, 0x6e, 0x74,
+	0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
+	0x09, 0x5a, 0x07, 0x2e, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
+}
+
+var (
+	file_proto_APIRoomAgentMonitorResponse_proto_rawDescOnce sync.Once
+	file_proto_APIRoomAgentMonitorResponse_proto_rawDescData = file_proto_APIRoomAgentMonitorResponse_proto_rawDesc
+)
+
+func file_proto_APIRoomAgentMonitorResponse_proto_rawDescGZIP() []byte {
+	file_proto_APIRoomAgentMonitorResponse_proto_rawDescOnce.Do(func() {
+		file_proto_APIRoomAgentMonitorResponse_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_APIRoomAgentMonitorResponse_proto_rawDescData)
+	})
+	return file_proto_APIRoomAgentMonitorResponse_proto_rawDescData
+}
+
+var file_proto_APIRoomAgentMonitorResponse_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_APIRoomAgentMonitorResponse_proto_goTypes = []interface{}{
+	(*APIRoomAgentMonitorResponse)(nil), // 0: proto.APIRoomAgentMonitorResponse
+}
+var file_proto_APIRoomAgentMonitorResponse_proto_depIdxs = []int32{
+	0, // [0:0] is the sub-list for method output_type
+	0, // [0:0] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
+}
+
+func init() { file_proto_APIRoomAgentMonitorResponse_proto_init() }
+func file_proto_APIRoomAgentMonitorResponse_proto_init() {
+	if File_proto_APIRoomAgentMonitorResponse_proto != nil {
+		return
+	}
+	if !protoimpl.UnsafeEnabled {
+		file_proto_APIRoomAgentMonitorResponse_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*APIRoomAgentMonitorResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+	}
+	type x struct{}
+	out := protoimpl.TypeBuilder{
+		File: protoimpl.DescBuilder{
+			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
+			RawDescriptor: file_proto_APIRoomAgentMonitorResponse_proto_rawDesc,
+			NumEnums:      0,
+			NumMessages:   1,
+			NumExtensions: 0,
+			NumServices:   0,
+		},
+		GoTypes:           file_proto_APIRoomAgentMonitorResponse_proto_goTypes,
+		DependencyIndexes: file_proto_APIRoomAgentMonitorResponse_proto_depIdxs,
+		MessageInfos:      file_proto_APIRoomAgentMonitorResponse_proto_msgTypes,
+	}.Build()
+	File_proto_APIRoomAgentMonitorResponse_proto = out.File
+	file_proto_APIRoomAgentMonitorResponse_proto_rawDesc = nil
+	file_proto_APIRoomAgentMonitorResponse_proto_goTypes = nil
+	file_proto_APIRoomAgentMonitorResponse_proto_depIdxs = nil
+}
