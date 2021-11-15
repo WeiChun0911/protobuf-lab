@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto;
+option go_package = "./syncData";
+
+message GameRecord {
+    uint32 ChannelId = 1;
+    string Accounts = 2;
+    uint32 KindId = 3;
+    uint32 ServerId = 4;
+    sint64 CellScore = 5;
+    sint64 Profit = 6;
+    string CreateTime = 7;
+    bool IsNew = 8;
+    string LastLoginTime = 9;
+    string RegisterTime = 10;
+    sint64 HistoryCellScore = 11;
+    sint64 HistoryProfit = 12;
+    sint64 HistoryGameNum = 13;
+}

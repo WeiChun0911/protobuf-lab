@@ -146,8 +146,8 @@
 // }
 syntax = "proto3";
 package proto;
-option go_package = "./proto";
+option go_package = "./crazyApiService/apiResponse";
 
-message APIRoomAgentMonitorResponse {
+message roomAgentMonitor {
     
 }

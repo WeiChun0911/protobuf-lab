@@ -1,8 +1,7 @@
-// type RoomAgentMonitor struct {
-// 	ID        int    `json:"id"`
-// 	RoomName  string `json:"roomName"`
-// 	AgentID   int    `json:"agentID"`
-// 	AgentName string `json:"agentName"`
+// type RoomNowMonitor struct {
+// 	ID       int    `json:"id"`
+// 	GameID   int    `json:"gameID"`
+// 	RoomName string `json:"roomName"`
 // 	//盈利率
 // 	ProfitRate struct {
 // 		Value          float64  `json:"value"`
@@ -45,8 +44,8 @@
 // 	} `json:"newActiveUser"`
 // 	//老活跃//老用户//老投注人数
 // 	OldActiveUser struct {
-// 		Value          int      `json:"value"`
-// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 		Value          int     `json:"value"`
+// 		YesterdayRatio float64 `json:"yesterdayRatio"`
 // 	} `json:"oldActiveUser"`
 // 	//有效投注
 // 	CellScore struct {
@@ -149,9 +148,9 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        v3.19.1
-// source: proto/APIRoomAgentMonitorResponse.proto
+// source: proto/crazyApiService/apiResponse/roomMonitor.proto
 
-package proto
+package apiResponse
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -167,29 +166,29 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type APIRoomAgentMonitorResponse struct {
+type RoomMonitor struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *APIRoomAgentMonitorResponse) Reset() {
-	*x = APIRoomAgentMonitorResponse{}
+func (x *RoomMonitor) Reset() {
+	*x = RoomMonitor{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_APIRoomAgentMonitorResponse_proto_msgTypes[0]
+		mi := &file_proto_crazyApiService_apiResponse_roomMonitor_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *APIRoomAgentMonitorResponse) String() string {
+func (x *RoomMonitor) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*APIRoomAgentMonitorResponse) ProtoMessage() {}
+func (*RoomMonitor) ProtoMessage() {}
 
-func (x *APIRoomAgentMonitorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_APIRoomAgentMonitorResponse_proto_msgTypes[0]
+func (x *RoomMonitor) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_crazyApiService_apiResponse_roomMonitor_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -200,40 +199,41 @@ func (x *APIRoomAgentMonitorResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use APIRoomAgentMonitorResponse.ProtoReflect.Descriptor instead.
-func (*APIRoomAgentMonitorResponse) Descriptor() ([]byte, []int) {
-	return file_proto_APIRoomAgentMonitorResponse_proto_rawDescGZIP(), []int{0}
+// Deprecated: Use RoomMonitor.ProtoReflect.Descriptor instead.
+func (*RoomMonitor) Descriptor() ([]byte, []int) {
+	return file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescGZIP(), []int{0}
 }
 
-var File_proto_APIRoomAgentMonitorResponse_proto protoreflect.FileDescriptor
+var File_proto_crazyApiService_apiResponse_roomMonitor_proto protoreflect.FileDescriptor
 
-var file_proto_APIRoomAgentMonitorResponse_proto_rawDesc = []byte{
-	0x0a, 0x27, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x41, 0x50, 0x49, 0x52, 0x6f, 0x6f, 0x6d, 0x41,
-	0x67, 0x65, 0x6e, 0x74, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x22, 0x1d, 0x0a, 0x1b, 0x41, 0x50, 0x49, 0x52, 0x6f, 0x6f, 0x6d, 0x41, 0x67, 0x65, 0x6e, 0x74,
-	0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
-	0x09, 0x5a, 0x07, 0x2e, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+var file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDesc = []byte{
+	0x0a, 0x33, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x72, 0x61, 0x7a, 0x79, 0x41, 0x70, 0x69,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x2f, 0x72, 0x6f, 0x6f, 0x6d, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x0d, 0x0a, 0x0b,
+	0x72, 0x6f, 0x6f, 0x6d, 0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x42, 0x1f, 0x5a, 0x1d, 0x2e,
+	0x2f, 0x63, 0x72, 0x61, 0x7a, 0x79, 0x41, 0x70, 0x69, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2f, 0x61, 0x70, 0x69, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_proto_APIRoomAgentMonitorResponse_proto_rawDescOnce sync.Once
-	file_proto_APIRoomAgentMonitorResponse_proto_rawDescData = file_proto_APIRoomAgentMonitorResponse_proto_rawDesc
+	file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescOnce sync.Once
+	file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescData = file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDesc
 )
 
-func file_proto_APIRoomAgentMonitorResponse_proto_rawDescGZIP() []byte {
-	file_proto_APIRoomAgentMonitorResponse_proto_rawDescOnce.Do(func() {
-		file_proto_APIRoomAgentMonitorResponse_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_APIRoomAgentMonitorResponse_proto_rawDescData)
+func file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescGZIP() []byte {
+	file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescOnce.Do(func() {
+		file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescData)
 	})
-	return file_proto_APIRoomAgentMonitorResponse_proto_rawDescData
+	return file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDescData
 }
 
-var file_proto_APIRoomAgentMonitorResponse_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_proto_APIRoomAgentMonitorResponse_proto_goTypes = []interface{}{
-	(*APIRoomAgentMonitorResponse)(nil), // 0: proto.APIRoomAgentMonitorResponse
+var file_proto_crazyApiService_apiResponse_roomMonitor_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_proto_crazyApiService_apiResponse_roomMonitor_proto_goTypes = []interface{}{
+	(*RoomMonitor)(nil), // 0: proto.roomMonitor
 }
-var file_proto_APIRoomAgentMonitorResponse_proto_depIdxs = []int32{
+var file_proto_crazyApiService_apiResponse_roomMonitor_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
 	0, // [0:0] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -241,14 +241,14 @@ var file_proto_APIRoomAgentMonitorResponse_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_proto_APIRoomAgentMonitorResponse_proto_init() }
-func file_proto_APIRoomAgentMonitorResponse_proto_init() {
-	if File_proto_APIRoomAgentMonitorResponse_proto != nil {
+func init() { file_proto_crazyApiService_apiResponse_roomMonitor_proto_init() }
+func file_proto_crazyApiService_apiResponse_roomMonitor_proto_init() {
+	if File_proto_crazyApiService_apiResponse_roomMonitor_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_proto_APIRoomAgentMonitorResponse_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*APIRoomAgentMonitorResponse); i {
+		file_proto_crazyApiService_apiResponse_roomMonitor_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RoomMonitor); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -264,18 +264,18 @@ func file_proto_APIRoomAgentMonitorResponse_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_proto_APIRoomAgentMonitorResponse_proto_rawDesc,
+			RawDescriptor: file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_proto_APIRoomAgentMonitorResponse_proto_goTypes,
-		DependencyIndexes: file_proto_APIRoomAgentMonitorResponse_proto_depIdxs,
-		MessageInfos:      file_proto_APIRoomAgentMonitorResponse_proto_msgTypes,
+		GoTypes:           file_proto_crazyApiService_apiResponse_roomMonitor_proto_goTypes,
+		DependencyIndexes: file_proto_crazyApiService_apiResponse_roomMonitor_proto_depIdxs,
+		MessageInfos:      file_proto_crazyApiService_apiResponse_roomMonitor_proto_msgTypes,
 	}.Build()
-	File_proto_APIRoomAgentMonitorResponse_proto = out.File
-	file_proto_APIRoomAgentMonitorResponse_proto_rawDesc = nil
-	file_proto_APIRoomAgentMonitorResponse_proto_goTypes = nil
-	file_proto_APIRoomAgentMonitorResponse_proto_depIdxs = nil
+	File_proto_crazyApiService_apiResponse_roomMonitor_proto = out.File
+	file_proto_crazyApiService_apiResponse_roomMonitor_proto_rawDesc = nil
+	file_proto_crazyApiService_apiResponse_roomMonitor_proto_goTypes = nil
+	file_proto_crazyApiService_apiResponse_roomMonitor_proto_depIdxs = nil
 }

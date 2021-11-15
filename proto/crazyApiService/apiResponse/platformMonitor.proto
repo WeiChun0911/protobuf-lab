@@ -1,7 +1,10 @@
-// type RoomNowMonitor struct {
-// 	ID       int    `json:"id"`
-// 	GameID   int    `json:"gameID"`
-// 	RoomName string `json:"roomName"`
+// type PlatformRealMonitor struct {
+// 	ID int `json:"id"`
+// 	//今日在线
+// 	OnlineUserNumber struct {
+// 		Value          int      `json:"value"`
+// 		YesterdayRatio *float64 `json:"yesterdayRatio"`
+// 	} `json:"onlineUserNumber"`
 // 	//盈利率
 // 	ProfitRate struct {
 // 		Value          float64  `json:"value"`
@@ -54,12 +57,12 @@
 // 	} `json:"cellScore"`
 // 	//新有效投注
 // 	NewCellScore struct {
-// 		Value          float64  `json:"value"`
+// 		Value          int      `json:"value"`
 // 		YesterdayRatio *float64 `json:"yesterdayRatio"`
 // 	} `json:"newCellScore"`
 // 	//老有效投注
 // 	OldCellScore struct {
-// 		Value          float64  `json:"value"`
+// 		Value          int      `json:"value"`
 // 		YesterdayRatio *float64 `json:"yesterdayRatio"`
 // 	} `json:"oldCellScore"`
 // 	//人均投注
@@ -145,8 +148,8 @@
 // }
 syntax = "proto3";
 package proto;
-option go_package = "./proto";
+option go_package = "./crazyApiService/apiResponse";
 
-message APIRoomMonitorResponse {
+message platformMonitor {
     
 }

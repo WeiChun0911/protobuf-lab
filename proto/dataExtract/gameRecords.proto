@@ -1,8 +1,8 @@
 syntax = "proto3";
 package proto;
-option go_package = "./proto";
+option go_package = "./dataExtract";
 
-import 	"proto/gameRecord.proto";
+import 	"proto/dataExtract/gameRecord.proto";
 
 message GameRecords {
     string Platform = 1;
