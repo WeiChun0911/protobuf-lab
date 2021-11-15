@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/WeiChun0911/protobuf-lab/pkg/person"
+	person "github.com/WeiChun0911/protobuf-lab/pkg/proto"
 	"google.golang.org/protobuf/proto"
 )
 
